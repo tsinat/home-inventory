@@ -1,0 +1,77 @@
+extends ./layout.jade
+
+block content
+    .container
+        h1.text-center Items  
+        .message-board
+        table
+            thead.tableItem
+                tr
+                    th.myRow Item id
+                    th.myRow Item Name
+                    th.myRow Item value
+                    th.myRow Item Room
+                    th.myRow Item Category
+                    
+            tbody                
+            - each val in messages
+                tr.message
+                    td
+                        div.myRow=val.id
+                    td
+                        div.myRow=val.name
+                    td
+                        div.myRow=val.value
+                    td
+                        div.myRow=val.room
+                    td
+                        div.myRow=val.category
+                    td 
+                        button.delete2.btn-danger(id=val.id) X
+                    td 
+                        button.edit.btn-success(type='button', data-toggle='modal', data-target='#myModal2' id=val.id) Edit
+        
+        // Trigger the modal with a button
+        button.btn.btn-success.btn-lg.send(type='button', data-toggle='modal', data-target='#myModal2') Add Item
+        // Modal
+        // Modal
+        #myModal2.modal.fade(role='dialog')
+          .modal-dialog
+            // Modal content
+            .modal-content
+              .modal-header
+                button.btn-danger.close(type='button', data-dismiss='modal')
+                h4.modal-title Add Item
+              .modal-body
+                form.form(role='form')
+                  .row
+                    .form-group.col-lg-12
+                      label(for='name') Name:
+                      input#name.form-control(type='text', placeholder='Contact Name', required='')
+                  .row
+                    .form-group.col-lg-12
+                      label(for='value') value:
+                      input#value.form-control(type='number', placeholder='Contact Name', required='')
+                  .row
+                    .form-group.col-lg-12
+                      label(for='category') Category:
+                      input#category.form-control(type='text', placeholder='Contact Name', required='')
+                  .row
+                      .form-control.col-lg-12
+                          label Room no:
+                          select
+                            option 1
+                            option 2
+                            option 3
+                            option 4
+                            option 5
+                            option 6
+                            option 7
+                            option 8
+                            option 9
+                  .row
+                    .form-group.col-lg-6
+                      button#save.save.btn-primary.btn-lg(type='submit') Add
+              .modal-footer
+                button.btn.btn-danger(type='button', data-dismiss='modal') Close
+        // Modal

@@ -1,0 +1,22 @@
+{
+  "name": "home-inventory",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Tsinat Zeree <cheru87@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6"
+  }
+}
